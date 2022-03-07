@@ -39,7 +39,7 @@ export const languageConfiguration: IRichLanguageConfiguration = {
 // https://grafana.com/docs/loki/latest/logql/metric_queries/#built-in-aggregation-operators
 const aggregations = [
 	'sum',
-  'avg',
+	'avg',
 	'min',
 	'max',
   'stddev',
@@ -53,18 +53,18 @@ const aggregations = [
 // https://grafana.com/docs/loki/latest/logql/log_queries/#parser-expression
 const parsers = [
 	'json',
-  'logfmt',
+	'logfmt',
 	'regexp',
 	'unpack',
-  'pattern',
+	'pattern',
 ];
 
 // LogQL format expressions
 // https://grafana.com/docs/loki/latest/logql/log_queries/#parser-expression
 
 const format_expressions = [
-  'line_format',
-  'label_format',
+	'line_format',
+	'label_format',
 ]
 
 // LogQL vector aggregations
@@ -98,7 +98,7 @@ const vectorMatchingRegex = `(${vector_matching.reduce((prev, curr) => `${prev}|
 const operators = [
 	'+', '-', '*', '/', '%', '^',
 	'==', '!=', '>', '<', '>=', '<=',
-  '|=', '!=', '|~', '!~',
+	'|=', '!=', '|~', '!~',
 	'and', 'or', 'unless',
 	'|',
 ];

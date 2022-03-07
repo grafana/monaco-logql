@@ -42,11 +42,11 @@ const aggregations = [
 	'avg',
 	'min',
 	'max',
-  'stddev',
+	'stddev',
 	'stdvar',
-  'count',
-  'topk',
-  'bottomk',
+	'count',
+	'topk',
+	'bottomk',
 ];
 
 // LogQL parser expressions

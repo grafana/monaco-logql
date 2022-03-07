@@ -1,0 +1,30 @@
+{
+  "name": "monaco-logql",
+  "version": "0.0.1",
+  "description": "LogQL support for Monaco code editor",
+  "main": "index.js",
+  "scripts": {
+    "build": "mrmdir ./lib && tsc -p ./src/tsconfig.json",
+    "lint": "eslint src/ --ext .ts",
+    "watch": "tsc -p ./src --watch"
+  },
+  "keywords": [
+    "LogQL",
+    "Monaco",
+    "Loki"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "monaco-editor": "^0.32.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "jsdom": "^15.1.1",
+    "mocha": "^8.3.2",
+    "monaco-plugin-helpers": "^1.0.3",
+    "requirejs": "^2.3.6",
+    "typescript": "^4.2.3",
+    "uglify-js": "^3.13.1"
+  }
+}

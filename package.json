@@ -1,10 +1,11 @@
 {
-  "name": "monaco-logql",
-  "version": "0.0.2",
+  "name": "@grafana/monaco-logql",
+  "version": "0.0.3",
   "description": "LogQL support for Monaco code editor",
   "main": "index.js",
   "scripts": {
     "compile": "tsc -p ./src/tsconfig.json",
+    "build": "bash ./build.sh",
     "watch": "tsc -p ./src --watch"
   },
   "keywords": [
@@ -12,8 +13,8 @@
     "Monaco",
     "Loki"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Grafana Labs <team@grafana.com> (https://grafana.com)",
+  "license": "Apache-2.0",
   "files": [
     "index.js",
     "index.d.ts",
@@ -26,5 +27,13 @@
   "devDependencies": {
     "monaco-editor": "^0.32.1",
     "typescript": "^4.2.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grafana/monaco-logql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grafana/monaco-logql/issues"
+  },
+  "homepage": "https://github.com/grafana/monaco-logql#readme"
 }

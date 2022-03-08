@@ -13,12 +13,11 @@ export const languageConfiguration: languages.LanguageConfiguration = {
   ],
   autoClosingPairs: [
     { open: "{", close: "}" },
-    { open: "{{", close: "}}" },
     { open: "[", close: "]" },
     { open: "(", close: ")" },
     { open: '"', close: '"' },
     { open: "'", close: "'" },
-    { open: "`", close: "`" },
+    { open: "\`", close: "\`" },
   ],
   surroundingPairs: [
     { open: "{", close: "}" },
@@ -26,7 +25,7 @@ export const languageConfiguration: languages.LanguageConfiguration = {
     { open: "(", close: ")" },
     { open: '"', close: '"' },
     { open: "'", close: "'" },
-    { open: "`", close: "`" },
+    { open: "\`", close: "\`" },
     { open: "<", close: ">" },
   ],
   folding: {},
@@ -189,15 +188,16 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_double: [
-      // eslint-disable-line @typescript-eslint/naming-convention
-      [/[^\\"]+/, "string"],
+      // token number is not correct, but I like the color of highlight 
+      // We can change it in the future if needed
+      [/\{\{(.*?)\}\}/, { token: 'number' }],
+			[/[^\\"]/, 'string'],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
       [/"/, "string", "@pop"],
     ],
 
     string_single: [
-      // eslint-disable-line @typescript-eslint/naming-convention
       [/[^\\']+/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
@@ -205,8 +205,9 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_backtick: [
-      // eslint-disable-line @typescript-eslint/naming-convention
-      [/[^\\\`$]+/, "string"],
+      // token number is not correct, but I like the color of highlight 
+      // We can change it in the future if needed      [/\{\{(.*?)\}\}/, { token: 'number' }],
+			[/[^\\\`]/, 'string'],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
       [/\`/, "string", "@pop"],

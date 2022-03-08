@@ -17,7 +17,7 @@ export const languageConfiguration: languages.LanguageConfiguration = {
     { open: "(", close: ")" },
     { open: '"', close: '"' },
     { open: "'", close: "'" },
-    { open: "\`", close: "\`" },
+    { open: "`", close: "`" },
   ],
   surroundingPairs: [
     { open: "{", close: "}" },
@@ -25,7 +25,7 @@ export const languageConfiguration: languages.LanguageConfiguration = {
     { open: "(", close: ")" },
     { open: '"', close: '"' },
     { open: "'", close: "'" },
-    { open: "\`", close: "\`" },
+    { open: "`", close: "`" },
     { open: "<", close: ">" },
   ],
   folding: {},
@@ -154,11 +154,9 @@ export const monarchlanguage: languages.IMonarchLanguage = {
       ],
 
       // strings
-      [/"([^"\\]|\\.)*$/, "string.invalid"], // non-teminated string
-      [/'([^'\\]|\\.)*$/, "string.invalid"], // non-teminated string
       [/"/, "string", "@string_double"],
       [/'/, "string", "@string_single"],
-      [/\`/, "string", "@string_backtick"],
+      [/`/, "string", "@string_backtick"],
 
       // whitespace
       { include: "@whitespace" },
@@ -189,7 +187,7 @@ export const monarchlanguage: languages.IMonarchLanguage = {
 
     string_double: [
       [/\{\{(.*?)\}\}/, { token: 'identifier' }],
-      [/[^\\"\t\r\n]/, "string"],
+      [/[^\\"]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
       [/"/, "string", "@pop"],
@@ -204,10 +202,10 @@ export const monarchlanguage: languages.IMonarchLanguage = {
 
     string_backtick: [
       [/\{\{(.*?)\}\}/, { token: 'identifier' }],
-      [/[^\\\`\t\r\n]/, "string"],
+      [/[^\\`]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
-      [/\`/, "string", "@pop"],
+      [/`/, "string", "@pop"],
     ],
 
     clauses: [

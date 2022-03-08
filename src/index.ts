@@ -188,9 +188,7 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_double: [
-      // token number is not correct, but I like the color of highlight 
-      // We can change it in the future if needed
-      [/\{\{(.*?)\}\}/, { token: 'number' }],
+      [/\{\{(.*?)\}\}/, { token: 'identifier' }],
 			[/[^\\"]/, 'string'],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
@@ -205,8 +203,7 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_backtick: [
-      // token number is not correct, but I like the color of highlight 
-      // We can change it in the future if needed      [/\{\{(.*?)\}\}/, { token: 'number' }],
+      [/\{\{(.*?)\}\}/, { token: 'identifier' }],
 			[/[^\\\`]/, 'string'],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],

@@ -186,7 +186,8 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_double: [
-      [/\{\{(.*?)\}\}/, { token: 'identifier' }],
+      // Set to token: number to differentiate color
+      [/\{\{(.*?)\}\}/, { token: 'number' }],
       [/[^\\"]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
@@ -201,7 +202,8 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_backtick: [
-      [/\{\{(.*?)\}\}/, { token: 'identifier' }],
+      // Set to token: number to differentiate color
+      [/\{\{(.*?)\}\}/, { token: 'number' }],
       [/[^\\`]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],

@@ -13,7 +13,6 @@ export const languageConfiguration: languages.LanguageConfiguration = {
   ],
   autoClosingPairs: [
     { open: "{", close: "}" },
-    { open: "{{", close: "}}" },
     { open: "[", close: "]" },
     { open: "(", close: ")" },
     { open: '"', close: '"' },
@@ -155,11 +154,9 @@ export const monarchlanguage: languages.IMonarchLanguage = {
       ],
 
       // strings
-      [/"([^"\\]|\\.)*$/, "string.invalid"], // non-teminated string
-      [/'([^'\\]|\\.)*$/, "string.invalid"], // non-teminated string
       [/"/, "string", "@string_double"],
       [/'/, "string", "@string_single"],
-      [/\`/, "string", "@string_backtick"],
+      [/`/, "string", "@string_backtick"],
 
       // whitespace
       { include: "@whitespace" },
@@ -189,15 +186,15 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_double: [
-      // eslint-disable-line @typescript-eslint/naming-convention
-      [/[^\\"]+/, "string"],
+      // Set to token: number to differentiate color
+      [/\{\{(.*?)\}\}/, { token: 'number' }],
+      [/[^\\"]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
       [/"/, "string", "@pop"],
     ],
 
     string_single: [
-      // eslint-disable-line @typescript-eslint/naming-convention
       [/[^\\']+/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
@@ -205,11 +202,12 @@ export const monarchlanguage: languages.IMonarchLanguage = {
     ],
 
     string_backtick: [
-      // eslint-disable-line @typescript-eslint/naming-convention
-      [/[^\\\`$]+/, "string"],
+      // Set to token: number to differentiate color
+      [/\{\{(.*?)\}\}/, { token: 'number' }],
+      [/[^\\`]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
-      [/\`/, "string", "@pop"],
+      [/`/, "string", "@pop"],
     ],
 
     clauses: [

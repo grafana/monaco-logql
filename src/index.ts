@@ -189,7 +189,7 @@ export const monarchlanguage: languages.IMonarchLanguage = {
 
     string_double: [
       [/\{\{(.*?)\}\}/, { token: 'identifier' }],
-			[/[^\\"]/, 'string'],
+      [/[^\\"\t\r\n]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
       [/"/, "string", "@pop"],
@@ -204,7 +204,7 @@ export const monarchlanguage: languages.IMonarchLanguage = {
 
     string_backtick: [
       [/\{\{(.*?)\}\}/, { token: 'identifier' }],
-			[/[^\\\`]/, 'string'],
+      [/[^\\\`\t\r\n]/, "string"],
       [/@escapes/, "string.escape"],
       [/\\./, "string.escape.invalid"],
       [/\`/, "string", "@pop"],

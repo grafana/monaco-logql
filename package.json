@@ -1,6 +1,6 @@
 {
   "name": "@grafana/monaco-logql",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "LogQL support for Monaco code editor",
   "main": "index.js",
   "scripts": {

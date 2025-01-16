@@ -175,7 +175,8 @@ export const monarchlanguage: languages.IMonarchLanguage = {
       ],
 
       // numbers
-      [/\d+(?:ms|[smhdwy])/, "number"], // 24h, 5ms are often encountered in loki
+      [/\d+(?:\.\d)?(?:ms|ns|us|µs|[smhdwy])/, "number"], // durations
+      [/\d+(?:\.\d)?(?:b|kib|Kib|kb|KB|mib|Mib|mb|MB|gib|Gib|gb|GB|tib|Tib|tb|TB|pib|Pib|pb|PB|eib|Eib|eb|EB])/, "number"], // bytes
       [/\d*\d+[eE]([\-+]?\d+)?(@floatsuffix)/, "number.float"],
       [/\d*\.\d+([eE][\-+]?\d+)?(@floatsuffix)/, "number.float"],
       [/0[xX][0-9a-fA-F']*[0-9a-fA-F](@integersuffix)/, "number.hex"],

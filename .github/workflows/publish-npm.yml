@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
         with:
           ref: main
       # limit releases to version changes - https://github.com/EndBug/version-check
       - name: Check version changes
-        uses: EndBug/version-check@v1
+        uses: EndBug/version-check@eea9dab124be9214bd32356f32f7d8945173db13 # v1
         id: version_check
         with:
           # diff the commits rather than commit message for version changes
@@ -27,7 +27,7 @@ jobs:
 
       - name: Setup .npmrc file for NPM registry
         if: steps.version_check.outputs.changed == 'true'
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2
         with:
           node-version: "14"
           registry-url: "https://registry.npmjs.org"

@@ -27,7 +27,7 @@ jobs:
 
       - name: Setup .npmrc file for NPM registry
         if: steps.version_check.outputs.changed == 'true'
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: "14"
           registry-url: "https://registry.npmjs.org"

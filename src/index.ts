@@ -1,4 +1,4 @@
-import { languages } from "monaco-editor";
+import type { languages } from "monaco-editor";
 
 export const languageConfiguration: languages.LanguageConfiguration = {
   // the default separators except `@$`

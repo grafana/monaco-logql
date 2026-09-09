@@ -46,6 +46,7 @@ const aggregations = [
   "sort",
   "sort_desc",
   "approx_topk",
+  "approx_count_distinct",
 ];
 
 // LogQL parser expressions
